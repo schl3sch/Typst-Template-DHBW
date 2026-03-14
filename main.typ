@@ -1,0 +1,35 @@
+#import "template/lib.typ": *
+#import "abstract.typ": abstract
+#import "acronyms.typ": acronyms 
+#import "glossary.typ": glossary
+
+#show: supercharged-dhbw.with(
+  title: "Title",
+  type-of-thesis: "Bachelorarbeit",
+  type-of-degree: "3. Studienjahr",
+  authors: (
+    (name: "Max Mustermann", student-id: "1111111", course: "INF2023AI", course-of-studies: "Allgemeine Informatik", company: (
+      (name: "Company123", post-code: "111111", city: "Heidenheim")
+    )),
+    // here you can add a second author
+  ),
+  acronyms: acronyms, // displays the acronyms defined in the acronyms dictionary
+  show-abstract: true,
+  appendix: true,
+  abstract: abstract,
+  at-university: false, // if true the company name on the title page and the confidentiality statement are hidden
+  bibliography: bibliography("bibliography.bib"),
+  date: datetime.today(),
+  glossary: glossary, // displays the glossary terms defined in the glossary dictionary
+  language: "de", // en, de
+  university: "Duale Hochschule Baden-Württemberg",
+  university-location: "Heidenheim",
+  university-short: "DHBW",
+  supervisor: (company: "Otto Normalverbraucher", university: "Erika Mustermann"),
+  // for more options check the package documentation (https://typst.app/universe/package/supercharged-dhbw)
+)
+
+// Edit this content to your liking
+#include "chapters/chapter1.typ"
+#include "chapters/chapter2.typ"
+#include "chapters/chapter3.typ"
