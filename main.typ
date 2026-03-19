@@ -29,7 +29,7 @@
   // for more options check the package documentation (https://typst.app/universe/package/supercharged-dhbw)
 )
 
-// Edit this content to your liking
-#include "chapters/chapter1.typ"
-#include "chapters/chapter2.typ"
-#include "chapters/chapter3.typ"
+// Edit this content to your liking and adjust the second number, to the count of the existing chapters + 1
+#for i in range(1, 4) {
+  include "chapters/" + str(i) + ".typ"
+}
