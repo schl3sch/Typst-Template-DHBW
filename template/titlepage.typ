@@ -29,22 +29,19 @@
   }
 
   // logos (optional)
-  stack(dir: ltr,
+  stack(
+    dir: ltr,
     spacing: 1fr,
-   // Logo at top left if given
-    align(horizon,
-      if logo-left != none {
-        set image(height: left-logo-height)
-        logo-left
-      }
-    ),
+    // Logo at top left if given
+    align(horizon, if logo-left != none {
+      set image(height: left-logo-height)
+      logo-left
+    }),
     // Logo at top right if given
-    align(horizon,
-      if logo-right != none {
-        set image(height: right-logo-height)
-        logo-right
-      }
-    )
+    align(horizon, if logo-right != none {
+      set image(height: right-logo-height)
+      logo-right
+    }),
   )
 
   if (many-authors) {
@@ -212,7 +209,7 @@
       for author in authors {
         text([#author.student-id, #author.course])
         linebreak()
-      }
+      },
     ),
 
     // company
@@ -227,47 +224,45 @@
 
           // company name
           if (
-            "name" in author.company and
-            author.company.name != none and
-            author.company.name != ""
-            ) {
-            company-address+= author.company.name
+            "name" in author.company and author.company.name != none and author.company.name != ""
+          ) {
+            company-address += author.company.name
           } else {
-            panic("Author '" + author.name + "' is missing a company name. Add the 'name' attribute to the company object.")
+            panic(
+              "Author '" + author.name + "' is missing a company name. Add the 'name' attribute to the company object.",
+            )
           }
 
           // company address (optional)
           if (
-            "post-code" in author.company and
-            author.company.post-code != none and
-            author.company.post-code != ""
-            ) {
-            company-address+= text([, #author.company.post-code])
+            "post-code" in author.company and author.company.post-code != none and author.company.post-code != ""
+          ) {
+            company-address += text([, #author.company.post-code])
           }
 
           // company city
           if (
-            "city" in author.company and
-            author.company.city != none and
-            author.company.city != ""
-            ) {
-            company-address+= text([, #author.company.city])
+            "city" in author.company and author.company.city != none and author.company.city != ""
+          ) {
+            company-address += text([, #author.company.city])
           } else {
-            panic("Author '" + author.name + "' is missing the city of the company. Add the 'city' attribute to the company object.")
+            panic(
+              "Author '"
+                + author.name
+                + "' is missing the city of the company. Add the 'city' attribute to the company object.",
+            )
           }
 
           // company country (optional)
           if (
-            "country" in author.company and
-            author.company.country != none and
-            author.company.country != ""
+            "country" in author.company and author.company.country != none and author.company.country != ""
           ) {
-            company-address+= text([, #author.company.country])
+            company-address += text([, #author.company.country])
           }
 
           company-address
           linebreak()
-        }
+        },
       )
     },
 
@@ -283,13 +278,12 @@
     if ("university" in supervisor) {
       text(
         weight: "semibold",
-        TITLEPAGE_SUPERVISOR.at(language) +
-        university-short +
-        [:]
+        TITLEPAGE_SUPERVISOR.at(language) + university-short + [:],
       )
     },
     if ("university" in supervisor and type(supervisor.university) == str) {
       text(supervisor.university)
-    }
+    },
   )
 }
+

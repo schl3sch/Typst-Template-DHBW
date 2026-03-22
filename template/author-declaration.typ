@@ -20,22 +20,40 @@
     declaration-of-authorship-content
   } else {
     par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_A.at(language))
-    
+
     v(1em)
 
     list(
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_B.at(language) + type-of-thesis + DECLARATION_OF_AUTHORSHIP_SECTION_C.at(language) + text(style: "italic",title) + DECLARATION_OF_AUTHORSHIP_SECTION_D.at(language)) + v(1em),
+      par(
+        justify: true,
+        DECLARATION_OF_AUTHORSHIP_SECTION_B.at(language)
+          + type-of-thesis
+          + DECLARATION_OF_AUTHORSHIP_SECTION_C.at(language)
+          + text(style: "italic", title)
+          + DECLARATION_OF_AUTHORSHIP_SECTION_D.at(language),
+      )
+        + v(1em),
 
       par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_E.at(language)) + v(1em),
 
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_F.at(language) + type-of-thesis + DECLARATION_OF_AUTHORSHIP_SECTION_G.at(language)) + v(1em),
+      par(
+        justify: true,
+        DECLARATION_OF_AUTHORSHIP_SECTION_F.at(language)
+          + type-of-thesis
+          + DECLARATION_OF_AUTHORSHIP_SECTION_G.at(language),
+      )
+        + v(1em),
 
-      par(justify: true,DECLARATION_OF_AUTHORSHIP_SECTION_H.at(language) + type-of-thesis + DECLARATION_OF_AUTHORSHIP_SECTION_I.at(language)) +  v(1em),
-
+      par(
+        justify: true,
+        DECLARATION_OF_AUTHORSHIP_SECTION_H.at(language)
+          + type-of-thesis
+          + DECLARATION_OF_AUTHORSHIP_SECTION_I.at(language),
+      )
+        + v(1em),
     )
 
     par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_J.at(language))
-      
   }
 
   let end-date = if (type(date) == datetime) {

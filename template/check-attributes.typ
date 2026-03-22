@@ -43,7 +43,9 @@
   }
 
   if (header != none and type(header) != dictionary) {
-    panic("Header is invalid. Specify a dictionary in the 'header' attribute of the template. The following attributes can be set: 'display', 'show-chapter', 'show-left-logo', 'show-right-logo', 'show-divider', 'content'.")
+    panic(
+      "Header is invalid. Specify a dictionary in the 'header' attribute of the template. The following attributes can be set: 'display', 'show-chapter', 'show-left-logo', 'show-right-logo', 'show-divider', 'content'.",
+    )
   }
 
   let boolean-attributes = (
@@ -60,7 +62,9 @@
 
   for (key, attribute) in boolean-attributes {
     if (type(attribute) != bool) {
-      panic("Attribute '" + key + "' is invalid. Specify 'true' or 'false' in the '" + key + "' attribute of the template.")
+      panic(
+        "Attribute '" + key + "' is invalid. Specify 'true' or 'false' in the '" + key + "' attribute of the template.",
+      )
     }
   }
 
@@ -108,9 +112,13 @@
 
   if (type(confidentiality-marker) != none) {
     if (
-      type(confidentiality-marker) != dictionary or "display" not in confidentiality-marker or type(confidentiality-marker.display) != bool
+      type(confidentiality-marker) != dictionary
+        or "display" not in confidentiality-marker
+        or type(confidentiality-marker.display) != bool
     ) {
-      panic("Confidentiality marker is invalid. Specify a dictionary in the 'confidentiality-marker' attribute of the template containing a 'display' attribute with a boolean value.")
+      panic(
+        "Confidentiality marker is invalid. Specify a dictionary in the 'confidentiality-marker' attribute of the template containing a 'display' attribute with a boolean value.",
+      )
     }
   }
 
@@ -149,15 +157,21 @@
   }
 
   if (
-    (type-of-thesis != none and type-of-thesis != "") or (type-of-degree != none and type-of-degree != "") or (
-      confidentiality-marker.display == true
-    )
+    (type-of-thesis != none and type-of-thesis != "")
+      or (type-of-degree != none and type-of-degree != "")
+      or (
+        confidentiality-marker.display == true
+      )
   ) {
     max-authors -= 2
   }
 
   if (authors.len() > max-authors) {
-    panic("Too many authors. Specify a maximum of " + str(max-authors) + " authors in the 'authors' attribute of the template. To increase the maximum number of authors (max. 8), change one of the following attributes: 'at-university', 'type-of-thesis', 'type-of-degree'. (See the package documentation for more information.)")
+    panic(
+      "Too many authors. Specify a maximum of "
+        + str(max-authors)
+        + " authors in the 'authors' attribute of the template. To increase the maximum number of authors (max. 8), change one of the following attributes: 'at-university', 'type-of-thesis', 'type-of-degree'. (See the package documentation for more information.)",
+    )
   }
 
   for author in authors {
@@ -166,15 +180,27 @@
     }
 
     if ("student-id" not in author or author.student-id == none or author.student-id == "") {
-      panic("Student ID of '" + author.name + "' is missing. Specify a student ID for each author in the 'authors' attribute of the template.")
+      panic(
+        "Student ID of '"
+          + author.name
+          + "' is missing. Specify a student ID for each author in the 'authors' attribute of the template.",
+      )
     }
 
     if ("course" not in author or author.course == none or author.course == "") {
-      panic("Course of '" + author.name + "' is missing. Specify a course for each author in the 'authors' attribute of the template.")
+      panic(
+        "Course of '"
+          + author.name
+          + "' is missing. Specify a course for each author in the 'authors' attribute of the template.",
+      )
     }
 
     if ("course-of-studies" not in author or author.course-of-studies == none or author.course-of-studies == "") {
-      panic("Course of studies of '" + author.name + "' is missing. Specify a course of studies for each author in the 'authors' attribute of the template.")
+      panic(
+        "Course of studies of '"
+          + author.name
+          + "' is missing. Specify a course of studies for each author in the 'authors' attribute of the template.",
+      )
     }
 
     if (at-university) {
@@ -197,7 +223,9 @@
   }
 
   if (language != "en" and language != "de") {
-    panic("Language is invalid. Specify 'en' for English or 'de' for German in the 'language' attribute of the template.")
+    panic(
+      "Language is invalid. Specify 'en' for English or 'de' for German in the 'language' attribute of the template.",
+    )
   }
 
   if (type(numbering-alignment) != alignment) {
@@ -209,11 +237,14 @@
   }
 
   if (
-    type(date) != datetime and (
-      type(date) != array or date.len() != 2 or type(date.at(0)) != datetime or type(date.at(1)) != datetime
-    )
+    type(date) != datetime
+      and (
+        type(date) != array or date.len() != 2 or type(date.at(0)) != datetime or type(date.at(1)) != datetime
+      )
   ) {
-    panic("Date is invalid. Specify a datetime in the 'date' attribute of the template to display a specific date or use a array containing two datetime elements to display a date range.")
+    panic(
+      "Date is invalid. Specify a datetime in the 'date' attribute of the template to display a specific date or use a array containing two datetime elements to display a date range.",
+    )
   }
 
   let image-attributes = (
@@ -242,11 +273,15 @@
   }
 
   if (
-    type(supervisor) != dictionary or (
-      "company" not in supervisor or supervisor.company == none or supervisor.company == ""
-    ) and ("university" not in supervisor or supervisor.university == none or supervisor.university == "")
+    type(supervisor) != dictionary
+      or (
+        "company" not in supervisor or supervisor.company == none or supervisor.company == ""
+      )
+        and ("university" not in supervisor or supervisor.university == none or supervisor.university == "")
   ) {
-    panic("Supervisor(s) is/are invalid. Specify a supervisor either for the company and/or the university in the 'supervisor' attribute of the template.")
+    panic(
+      "Supervisor(s) is/are invalid. Specify a supervisor either for the company and/or the university in the 'supervisor' attribute of the template.",
+    )
   }
 
   let string-array-attributes = (
@@ -255,11 +290,24 @@
 
   for (key, attribute) in string-array-attributes {
     if (type(attribute) != array) {
-      panic("Attribute '" + key + "' is invalid. Specify an array of strings in the '" + key + "' attribute of the template.")
+      panic(
+        "Attribute '"
+          + key
+          + "' is invalid. Specify an array of strings in the '"
+          + key
+          + "' attribute of the template.",
+      )
     } else if (attribute.len() > 0) {
       if (type(attribute.at(0)) != str) {
-        panic("Attribute '" + key + "' is invalid. Specify an array of strings in the '" + key + "' attribute of the template.")
+        panic(
+          "Attribute '"
+            + key
+            + "' is invalid. Specify an array of strings in the '"
+            + key
+            + "' attribute of the template.",
+        )
       }
     }
   }
 }
+
