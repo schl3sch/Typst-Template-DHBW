@@ -33,13 +33,21 @@
     }
 
 
-
     v(1em)
 
     par(
       justify: true,
-      CONFIDENTIALITY_STATEMENT_SECTION_A.at(language) + type-of-thesis +
-      CONFIDENTIALITY_STATEMENT_SECTION_B.at(language) + text(style: "italic",title)  + CONFIDENTIALITY_STATEMENT_SECTION_C.at(language) + companies + CONFIDENTIALITY_STATEMENT_SECTION_D.at(language) + author-study-course + CONFIDENTIALITY_STATEMENT_SECTION_E.at(language) + university-location + CONFIDENTIALITY_STATEMENT_SECTION_F.at(language),
+      CONFIDENTIALITY_STATEMENT_SECTION_A.at(language)
+        + type-of-thesis
+        + CONFIDENTIALITY_STATEMENT_SECTION_B.at(language)
+        + text(style: "italic", title)
+        + CONFIDENTIALITY_STATEMENT_SECTION_C.at(language)
+        + companies
+        + CONFIDENTIALITY_STATEMENT_SECTION_D.at(language)
+        + author-study-course
+        + CONFIDENTIALITY_STATEMENT_SECTION_E.at(language)
+        + university-location
+        + CONFIDENTIALITY_STATEMENT_SECTION_F.at(language),
     )
     v(1em)
     list(
@@ -47,7 +55,7 @@
       par(justify: true, CONFIDENTIALITY_STATEMENT_SECTION_H.at(language)) + v(1em),
       par(justify: true, CONFIDENTIALITY_STATEMENT_SECTION_I.at(language)),
     )
-    
+
     v(1em)
 
     par(

@@ -1,6 +1,6 @@
 #import "template/lib.typ": *
 #import "abstract.typ": abstract
-#import "acronyms.typ": acronyms 
+#import "acronyms.typ": acronyms
 #import "glossary.typ": glossary
 
 #show: supercharged-dhbw.with(
@@ -8,9 +8,15 @@
   type-of-thesis: "Bachelorarbeit",
   type-of-degree: "3. Studienjahr",
   authors: (
-    (name: "Max Mustermann", student-id: "1111111", course: "INF2023AI", course-of-studies: "Allgemeine Informatik", company: (
-      (name: "Company123", post-code: "111111", city: "Heidenheim")
-    )),
+    (
+      name: "Max Mustermann",
+      student-id: "1111111",
+      course: "INF2023AI",
+      course-of-studies: "Allgemeine Informatik",
+      company: (
+        (name: "Company123", post-code: "111111", city: "Heidenheim")
+      ),
+    ),
     // here you can add a second author
   ),
   acronyms: acronyms, // displays the acronyms defined in the acronyms dictionary

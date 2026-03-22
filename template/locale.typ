@@ -70,17 +70,17 @@
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_G = (
   "de": " bei keiner anderen Prüfung vorgelegt habe;",
-  "en": " has not been submitted either in whole or part, for a degree at this or any other university or institution;"
+  "en": " has not been submitted either in whole or part, for a degree at this or any other university or institution;",
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_H = (
   "de": "dass ich diese ",
-  "en": "I have not published this "
+  "en": "I have not published this ",
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_I = (
   "de": " nicht in der Vergangenheit veröffentlicht habe;",
-  "en": " in the past;"
+  "en": " in the past;",
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_J = (
@@ -102,7 +102,7 @@
   "de": " mit dem Titel ",
   "en": " on hand ",
 )
- 
+
 #let CONFIDENTIALITY_STATEMENT_SECTION_C = (
   "de": " enthält unternehmensinterne und vertrauliche Informationen der ",
   "en": " contains internal respectively confidential data of ",
