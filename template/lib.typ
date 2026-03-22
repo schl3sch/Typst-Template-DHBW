@@ -1,11 +1,12 @@
 #import "@preview/codelst:2.0.2": *
-#import "acronym-lib.typ": init-acronyms, print-acronyms, acr, acrpl, acrs, acrspl, acrl, acrlpl, acrf, acrfpl
-#import "glossary-lib.typ": init-glossary, print-glossary, gls
-#import "locale.typ": TABLE_OF_CONTENTS, LIST_OF_FIGURES, LIST_OF_TABLES, CODE_SNIPPETS, APPENDIX, REFERENCES
+#import "acronym-lib.typ": acr, acrf, acrfpl, acrl, acrlpl, acrpl, acrs, acrspl, init-acronyms, print-acronyms
+#import "glossary-lib.typ": gls, init-glossary, print-glossary
+#import "locale.typ": APPENDIX, CODE_SNIPPETS, LIST_OF_FIGURES, LIST_OF_TABLES, REFERENCES, TABLE_OF_CONTENTS
 #import "titlepage.typ": *
 #import "confidentiality-statement.typ": *
 #import "author-declaration.typ": *
 #import "check-attributes.typ": *
+#import "custom-commands.typ": *
 
 // Workaround for the lack of an `std` scope.
 #let std-bibliography = bibliography
@@ -226,7 +227,7 @@
   } else {
     true
   }
-  
+
   let show-header-left-logo = if (header != none and ("show-left-logo" in header)) {
     header.show-left-logo
   } else {
@@ -238,7 +239,7 @@
   } else {
     true
   }
-  
+
   let show-header-divider = if (header != none and ("show-divider" in header)) {
     header.show-divider
   } else {
@@ -398,11 +399,11 @@
     show outline: set heading(outlined: true)
     outline(..args)
   }
- 
+
   context {
     let elems = query(figure.where(kind: image))
     let count = elems.len()
- 
+
     if (show-list-of-figures and count > 0) {
       graph-outline(
         title: LIST_OF_FIGURES.at(language),
@@ -410,20 +411,19 @@
       )
     }
   }
- 
+
   context {
     let elems = query(figure.where(kind: table))
     let count = elems.len()
- 
+
     if (show-list-of-tables and count > 0) {
       graph-outline(
         title: LIST_OF_TABLES.at(language),
         target: figure.where(kind: table),
- 
       )
     }
   }
- 
+
   context {
     let elems = query(figure.where(kind: raw))
     let count = elems.len()

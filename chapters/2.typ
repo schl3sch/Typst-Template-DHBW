@@ -47,11 +47,7 @@ Create figures or tables like this:
     columns: (1fr, 50%, auto),
     inset: 10pt,
     align: horizon,
-    table.header(
-      [],
-      [*Area*],
-      [*Parameters*],
-    ),
+    table.header([], [*Area*], [*Parameters*]),
 
     text("cylinder.svg"),
     $ pi h (D^2 - d^2) / 4 $,
@@ -74,24 +70,32 @@ Insert code snippets like this:
 #figure(
   caption: "Codeblock Example",
   sourcecode[```ts
-    const ReactComponent = () => {
-      return (
-        <div>
-          <h1>Hello World</h1>
-        </div>
-      );
-    };
+  const ReactComponent = () => {
+    return (
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    );
+  };
 
-    export default ReactComponent;
-    ```],
+  export default ReactComponent;
+  ```],
 )
 
 == References
 
 Cite like this #cite(form: "prose", <iso18004>).
 Or like this @iso18004.
+Or cite like in the guidelines #footnote[#glcite(<iso18004>)]
 
 You can also reference by adding `<ref>` with the desired name after figures or headings.
 
 For example this @table references the table on the previous page.
 
+== Custom commands
+
+This is a todo:
+#todo[This is a todo]
+
+This is a citation:
+#glcite(<iso18004>)
