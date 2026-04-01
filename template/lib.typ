@@ -159,11 +159,19 @@
   set math.equation(numbering: math-numbering)
 
   // set link style for links that are not acronyms
+  assert(
+    type(acronyms) == dictionary,
+    message: "Error: 'acronyms' must be a dictionary. Please use (:) instead of ().",
+  )
   let acronym-keys = if (acronyms != none) {
     acronyms.keys().map(acr => ("acronyms-" + acr))
   } else {
     ()
   }
+  assert(
+    type(glossary) == dictionary,
+    message: "Error: 'glossary' must be a dictionary. Please use (:) instead of ().",
+  )
   let glossary-keys = if (glossary != none) {
     glossary.keys().map(gls => ("glossary-" + gls))
   } else {
