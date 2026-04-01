@@ -1,5 +1,4 @@
 #import "template/lib.typ": *
-#import "abstract.typ": abstract
 #import "acronyms.typ": acronyms
 #import "glossary.typ": glossary
 
@@ -22,7 +21,6 @@
   acronyms: acronyms, // displays the acronyms defined in the acronyms dictionary
   show-abstract: true,
   appendix: true,
-  abstract: abstract,
   at-university: false, // if true the company name on the title page and the confidentiality statement are hidden
   bibliography: bibliography("bibliography.bib"),
   date: datetime.today(),
