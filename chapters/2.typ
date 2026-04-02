@@ -94,8 +94,11 @@ For example this @table references the table on the previous page.
 
 == Custom commands
 
-This is a todo:
+==== TODO:
 #todo[This is a todo]
 
-This is a citation:
+==== Citation:
 #glcite(<iso18004>)
+
+==== Description:
+#desc[Header][#lorem(20)]
