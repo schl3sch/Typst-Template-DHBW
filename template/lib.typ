@@ -380,6 +380,7 @@
 
   set par(justify: true, leading: 1em)
 
+  let abstract = include "../abstract.typ"
   if (show-abstract and abstract != none) {
     align(center + horizon, heading(level: 1, numbering: none, outlined: false)[Abstract])
     text(abstract)

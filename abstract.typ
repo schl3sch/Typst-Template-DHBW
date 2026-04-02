@@ -1,1 +1,1 @@
-#let abstract = lorem(200)
+#lorem(200)
