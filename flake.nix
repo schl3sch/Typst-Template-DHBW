@@ -17,7 +17,13 @@
       devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
           typst
+          montserrat
+          open-sans
         ];
+
+        shellHook = ''
+          export TYPST_FONT_PATHS="${pkgs.open-sans}/share/fonts:${pkgs.montserrat}/share/fonts"
+        '';
       };
     });
 }
