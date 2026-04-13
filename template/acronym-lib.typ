@@ -2,13 +2,16 @@
 #import "shared-lib.typ": display, display-link, is-in-dict
 
 #let prefix = "acronym-state-"
-#let acros = state("acronyms", none)
 
-#let init-acronyms(acronyms) = {
-  acros.update(acronyms)
+// 1. Initialize a global state to hold your acronyms
+#let acros = state("acronyms", (:))
+
+// 2. Create a helper function to load your dictionary into the state
+#let init-acronyms(dict) = {
+  acros.update(dict)
 }
 
-
+// 3. The main function wrapped in 'context' so it can access the state anywhere
 #let acrs(acr, plural: false, link: true) = {
   if plural {
     display("acronyms", acros, acr, acr + "s", link: link)
@@ -21,16 +24,6 @@
   acrs(acr, plural: true, link: link)
 }
 
-
-// 1. Initialize a global state to hold your acronyms
-#let acros = state("acronyms", (:))
-
-// 2. Create a helper function to load your dictionary into the state
-#let init-acronyms(dict) = {
-  acros.update(dict)
-}
-
-// 3. The main function wrapped in 'context' so it can access the state anywhere
 #let acrl(acr, plural: false, link: true) = context {
   let acronyms = acros.get()
 
