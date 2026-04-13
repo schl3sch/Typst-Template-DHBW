@@ -5,11 +5,22 @@
   ]
 }
 
-//Adds citation, mentioned in the guidelines
+// Adds citation, mentioned in the guidelines
 #let glcite(key) = {
   cite(key, form: "author")
   [ (]
   cite(key, form: "year")
   [) ]
   cite(key)
+}
+
+// Adds description (term and body)
+#let desc(term, body) = {
+  stack(
+    dir: ttb,
+    spacing: 0.6em,
+    [*#term*],
+    [#body],
+  )
+  v(1em)
 }
