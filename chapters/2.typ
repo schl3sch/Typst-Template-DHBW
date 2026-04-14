@@ -37,7 +37,7 @@ Create figures or tables like this:
 
 === Figures
 
-#figure(caption: "Image Example", image(width: 4cm, "../assets/ts.svg"))
+#figure(caption: [Image Example #footnote[#glcite(<iso18004>)]], image(width: 4cm, "../assets/ts.svg"))
 
 === Tables
 
