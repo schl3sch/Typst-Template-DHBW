@@ -14,6 +14,7 @@
   show-list-of-tables,
   show-code-snippets,
   show-abstract,
+  ai-table,
   header,
   numbering-alignment,
   toc-depth,
@@ -58,6 +59,7 @@
     show-list-of-tables: show-list-of-tables,
     show-code-snippets: show-code-snippets,
     show-abstract: show-abstract,
+    ai-table: ai-table,
   )
 
   for (key, attribute) in boolean-attributes {
@@ -310,4 +312,3 @@
     }
   }
 }
-

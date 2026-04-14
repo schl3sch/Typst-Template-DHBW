@@ -84,6 +84,11 @@
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_J = (
+  "de" : "dass ich den Einsatz von KI-Werkzeugen an den entsprechenden Stellen der Arbeit vollständig und transparent kenntlich gemacht habe;",
+  "en": "all sections of this work generated or assisted by AI tools have been explicitly marked as such;",
+)
+
+#let DECLARATION_OF_AUTHORSHIP_SECTION_K = (
   "de": "Ich bin mir bewusst, dass eine falsche Erklärung rechtliche Folgen haben wird.",
   "en": "I am aware that a dishonest declaration will entail legal consequences.",
 )
@@ -201,4 +206,9 @@
 #let APPENDIX = (
   "de": "Anhang",
   "en": "Appendix",
+)
+
+#let AI_USAGE = (
+  "de": "Anmerkung zur Nutzung Künstlicher Intelligenz",
+  "en": "AI Acknowledgement",
 )

@@ -51,9 +51,15 @@
           + DECLARATION_OF_AUTHORSHIP_SECTION_I.at(language),
       )
         + v(1em),
+
+      par(
+        justify: true,
+        DECLARATION_OF_AUTHORSHIP_SECTION_J.at(language)
+      )
+        + v(1em),
     )
 
-    par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_J.at(language))
+    par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_K.at(language))
   }
 
   let end-date = if (type(date) == datetime) {
