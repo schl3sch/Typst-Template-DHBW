@@ -11,8 +11,17 @@
 }
 
 #let display-link(dict-type, state, element, text) = {
-  if is-in-dict(dict-type, state, element) {
-    link(label(dict-type + "-" + element), text)
+  context {
+    let list = state.get()
+    if element not in list {
+      panic(element + " is not a key in the " + dict-type + " dictionary.")
+    }
+    let target-label = label(dict-type + "-" + element)
+    if query(target-label).len() > 0 {
+      link(target-label, text)
+    } else {
+      text
+    }
   }
 }
 
@@ -23,4 +32,3 @@
     text
   }
 }
-

@@ -1,6 +1,5 @@
 #import "template/lib.typ": *
 #import "acronyms.typ": acronyms
-#import "glossary.typ": glossary
 
 #show: supercharged-dhbw.with(
   title: "Title",
@@ -25,7 +24,7 @@
   at-university: false, // if true the company name on the title page and the confidentiality statement are hidden
   bibliography: bibliography("bibliography.bib"),
   date: datetime.today(),
-  glossary: glossary, // displays the glossary terms defined in the glossary dictionary
+  glossary: true, // displays the glossary terms defined in the glossary dictionary
   language: "de", // en, de
   university: "Duale Hochschule Baden-Württemberg",
   university-location: "Heidenheim",

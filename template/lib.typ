@@ -7,6 +7,7 @@
 #import "author-declaration.typ": *
 #import "check-attributes.typ": *
 #import "custom-commands.typ": *
+#import "../glossary.typ": glossary as glossary-dict
 
 // Workaround for the lack of an `std` scope.
 #let std-bibliography = bibliography
@@ -63,7 +64,7 @@
   ai-usage: none,
   appendix: none,
   acronyms: none,
-  glossary: none,
+  glossary: false,
   header: none,
   confidentiality-statement-content: none,
   declaration-of-authorship-content: none,
@@ -134,7 +135,7 @@
   let many-authors = authors.len() > 3
 
   init-acronyms(acronyms)
-  init-glossary(glossary)
+  init-glossary(glossary-dict)
 
   // define logo size with given ration
   let left-logo-height = 2.4cm // left logo is always 2.4cm high
@@ -171,12 +172,13 @@
   } else {
     ()
   }
+
   assert(
-    type(glossary) == dictionary,
-    message: "Error: 'glossary' must be a dictionary. Please use (:) instead of ().",
+    type(glossary) == bool,
+    message: "Error: 'glossary' must be a boolean (true or false).",
   )
-  let glossary-keys = if (glossary != none) {
-    glossary.keys().map(gls => ("glossary-" + gls))
+  let glossary-keys = if (glossary-dict != none and type(glossary-dict) == dictionary) {
+    glossary-dict.keys().map(gls => ("glossary-" + gls))
   } else {
     ()
   }
@@ -451,8 +453,8 @@
     print-acronyms(language, acronym-spacing)
   }
 
-  if (glossary != none and glossary.len() > 0) {
-    print-glossary(language, glossary-spacing)
+  if glossary {
+    print-glossary(language, 1.5em)
   }
 
   [#metadata(none)<numbering-preface-end>]
