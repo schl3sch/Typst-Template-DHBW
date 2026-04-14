@@ -24,3 +24,29 @@
   )
   v(1em)
 }
+
+// Helper to safely allow both "strings" and <labels>
+#let to-str(key) = if type(key) == label { str(key) } else { key }
+
+// 1. Base citation (Make sure 'note: none' is right here)
+#let glcitel(key, note: none) = {
+  let k = to-str(key)
+  [#cite(label(k), form: "author")~(#cite(label(k), form: "year"))#cite(label(k), supplement: note)]
+}
+
+// 2. Compare citation
+#let glcfcite(key, note: none) = [
+  Vgl.~#glcitel(key, note: note)
+]
+
+// 3. Footnote citation
+#let glfootcite(key, note: none) = {
+  let k = to-str(key)
+  footnote[#glcitel(k, note: note)#label("fn:" + k)]
+}
+
+// 4. Compare footnote citation
+#let glcffootcite(key, note: none) = {
+  let k = to-str(key)
+  footnote[#glcfcite(k, note: note)#label("fn:" + k)]
+}

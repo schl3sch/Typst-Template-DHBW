@@ -98,7 +98,28 @@ For example this @table references the table on the previous page.
 #todo[This is a todo]
 
 ==== Citation:
+===== glcite:
 #glcite(<iso18004>)
+
+===== glcitel:
+#glcitel("iso18004")
+
+#glcitel("iso18004", note: [S. 42])
+
+===== glcfcite:
+#glcfcite("iso18004")
+
+#glcfcite("iso18004", note: [S. 15-18])
+
+===== glfootcite:
+#glfootcite("iso18004")
+
+#glfootcite("iso18004", note: [S. 100])
+
+===== glcffootcite:
+#glcffootcite("iso18004")
+
+#glcffootcite("iso18004", note: [Kapitel 3])
 
 ==== Description:
 #desc[Header][#lorem(20)]
