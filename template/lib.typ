@@ -1,7 +1,7 @@
 #import "@preview/codelst:2.0.2": *
 #import "acronym-lib.typ": acr, acrf, acrfpl, acrl, acrlpl, acrpl, acrs, acrspl, init-acronyms, print-acronyms
 #import "glossary-lib.typ": gls, init-glossary, print-glossary
-#import "locale.typ": APPENDIX, CODE_SNIPPETS, LIST_OF_FIGURES, LIST_OF_TABLES, REFERENCES, TABLE_OF_CONTENTS
+#import "locale.typ": APPENDIX, CODE_SNIPPETS, LIST_OF_FIGURES, LIST_OF_TABLES, REFERENCES, TABLE_OF_CONTENTS, AI_USAGE,
 #import "titlepage.typ": *
 #import "confidentiality-statement.typ": *
 #import "author-declaration.typ": *
@@ -54,11 +54,13 @@
   show-list-of-tables: true,
   show-code-snippets: true,
   show-abstract: true,
+  ai-table: true,
   numbering-alignment: center,
   toc-depth: 3,
   acronym-spacing: 5em,
   glossary-spacing: 1.5em,
   abstract: none,
+  ai-usage: none,
   appendix: none,
   acronyms: none,
   glossary: none,
@@ -101,6 +103,7 @@
     show-list-of-tables,
     show-code-snippets,
     show-abstract,
+    ai-table,
     header,
     numbering-alignment,
     toc-depth,
@@ -516,6 +519,12 @@
       style: bib-style,
     )
     bibliography
+  }
+
+  let ai-usage = include "../ai-table.typ"
+  if (ai-table and ai-usage != none) {
+    heading(level: 1, numbering: none, outlined: false)[#AI_USAGE.at(language)]
+    text(ai-usage)
   }
 
   if (appendix != none) {
