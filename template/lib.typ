@@ -487,7 +487,6 @@
 
   [#metadata(none)<numbering-main-end>]
   // reset page numbering and set to appendix page numbering
-
   let appendix-numbering = "a"
   if ("appendix" in page-numbering) {
     appendix-numbering = page-numbering.appendix

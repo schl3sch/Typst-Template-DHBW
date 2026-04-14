@@ -20,4 +20,5 @@
     ],
 
   ),
+  outlined: false,
 )

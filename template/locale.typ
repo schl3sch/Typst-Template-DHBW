@@ -210,5 +210,5 @@
 
 #let AI_USAGE = (
   "de": "Anmerkung zur Nutzung Künstlicher Intelligenz",
-  "en": "AI Acknowledgement",
+  "en": "AI Usage Acknowledgement",
 )
