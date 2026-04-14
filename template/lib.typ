@@ -415,7 +415,7 @@
   context {
     let elems = query(figure.where(kind: image))
     let count = elems.len()
-
+    show cite: it => { }
     if (show-list-of-figures and count > 0) {
       graph-outline(
         title: LIST_OF_FIGURES.at(language),
@@ -427,7 +427,7 @@
   context {
     let elems = query(figure.where(kind: table))
     let count = elems.len()
-
+    show cite: it => { }
     if (show-list-of-tables and count > 0) {
       graph-outline(
         title: LIST_OF_TABLES.at(language),
@@ -439,6 +439,7 @@
   context {
     let elems = query(figure.where(kind: raw))
     let count = elems.len()
+    show cite: it => { }
     if (show-code-snippets and count > 0) {
       graph-outline(
         title: CODE_SNIPPETS.at(language),
