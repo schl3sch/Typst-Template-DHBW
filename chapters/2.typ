@@ -97,6 +97,12 @@ For example this @table references the table on the previous page.
 ==== TODO:
 #todo[This is a todo]
 
+==== Question:
+#question[This is a question]
+
+==== Important:
+#important[This is important!]
+
 ==== Citation:
 ===== glcite:
 #glcite(<iso18004>)

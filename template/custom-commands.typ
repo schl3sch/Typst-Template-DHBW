@@ -5,6 +5,21 @@
   ]
 }
 
+// Adds question to highlight questions in the pdf
+#let question(body) = {
+  highlight(fill: green.lighten(60%))[
+    *Question:* #body
+  ]
+}
+
+// Adds important to highlight important things in the pdf
+#let important(body) = {
+  set text(size: 15pt)
+  highlight(fill: red)[
+    *Important:* #body
+  ]
+}
+
 // Adds citation, mentioned in the guidelines
 #let glcite(key) = {
   cite(key, form: "author")
