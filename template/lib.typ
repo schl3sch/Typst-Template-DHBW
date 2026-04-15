@@ -1,4 +1,5 @@
 #import "@preview/codelst:2.0.2": *
+#import "@preview/mmdr:0.2.1": *
 #import "acronym-lib.typ": acr, acrf, acrfpl, acrl, acrlpl, acrpl, acrs, acrspl, init-acronyms, print-acronyms
 #import "glossary-lib.typ": gls, init-glossary, print-glossary
 #import "locale.typ": APPENDIX, CODE_SNIPPETS, LIST_OF_FIGURES, LIST_OF_TABLES, REFERENCES, TABLE_OF_CONTENTS, AI_USAGE,
