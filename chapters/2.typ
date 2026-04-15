@@ -1,6 +1,4 @@
 #import "../template/lib.typ": *
-#import "../acronyms.typ": acronyms
-#import "../glossary.typ": glossary
 = Examples
 
 #lorem(30)
@@ -95,14 +93,16 @@ For example this @table references the table on the previous page.
 == Mermaid
 #figure(
   caption: [Ein einfaches Mermaid-Flussdiagramm],
-  mermaid("
+  mermaid(
+    "
     graph TD
       A[Start] --> B{Diagramm benötigt?}
       B -- Ja --> C[Mermaid nutzen]
       B -- Nein --> D[Text schreiben]
       C --> E[Dokument kompilieren]
       D --> E
-  ")
+  ",
+  ),
 )
 
 #mermaid(

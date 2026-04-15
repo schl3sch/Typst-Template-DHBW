@@ -18,6 +18,7 @@
     ),
     // here you can add a second author
   ),
+  show-acronyms: true,
   acronyms: acronyms, // displays the acronyms defined in the acronyms dictionary
   show-abstract: true,
   ai-table: true,
@@ -25,6 +26,7 @@
   at-university: false, // if true the company name on the title page and the confidentiality statement are hidden
   bibliography: bibliography("bibliography.bib"),
   date: datetime.today(),
+  show-glossary: true,
   glossary: glossary, // displays the glossary terms defined in the glossary dictionary
   language: "de", // en, de
   university: "Duale Hochschule Baden-Württemberg",

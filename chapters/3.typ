@@ -1,6 +1,4 @@
 #import "../template/lib.typ": *
-#import "../acronyms.typ": acronyms
-#import "../glossary.typ": glossary
 
 = Conclusion
 

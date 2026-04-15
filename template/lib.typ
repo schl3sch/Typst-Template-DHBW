@@ -2,12 +2,14 @@
 #import "@preview/mmdr:0.2.1": *
 #import "acronym-lib.typ": acr, acrf, acrfpl, acrl, acrlpl, acrpl, acrs, acrspl, init-acronyms, print-acronyms
 #import "glossary-lib.typ": gls, init-glossary, print-glossary
-#import "locale.typ": APPENDIX, CODE_SNIPPETS, LIST_OF_FIGURES, LIST_OF_TABLES, REFERENCES, TABLE_OF_CONTENTS, AI_USAGE,
+#import "locale.typ": AI_USAGE, APPENDIX, CODE_SNIPPETS, LIST_OF_FIGURES, LIST_OF_TABLES, REFERENCES, TABLE_OF_CONTENTS
 #import "titlepage.typ": *
 #import "confidentiality-statement.typ": *
 #import "author-declaration.typ": *
 #import "check-attributes.typ": *
 #import "custom-commands.typ": *
+#import "../glossary.typ": glossary
+#import "../acronyms.typ": acronyms
 
 // Workaround for the lack of an `std` scope.
 #let std-bibliography = bibliography
@@ -82,6 +84,7 @@
   appendix: none,
   acronyms: none,
   glossary: none,
+  show-glossary: true,
   header: none,
   confidentiality-statement-content: none,
   declaration-of-authorship-content: none,
@@ -180,20 +183,13 @@
   set math.equation(numbering: math-numbering)
 
   // set link style for links that are not acronyms
-  assert(
-    type(acronyms) == dictionary,
-    message: "Error: 'acronyms' must be a dictionary. Please use (:) instead of ().",
-  )
-  let acronym-keys = if (acronyms != none) {
+  let acronym-keys = if (acronyms != none and type(acronyms) == dictionary) {
     acronyms.keys().map(acr => ("acronyms-" + acr))
   } else {
     ()
   }
-  assert(
-    type(glossary) == dictionary,
-    message: "Error: 'glossary' must be a dictionary. Please use (:) instead of ().",
-  )
-  let glossary-keys = if (glossary != none) {
+
+  let glossary-keys = if (glossary != none and type(glossary) == dictionary) {
     glossary.keys().map(gls => ("glossary-" + gls))
   } else {
     ()
@@ -439,7 +435,7 @@
         graph-outline(
           title: LIST_OF_FIGURES.at(language),
           target: figure.where(kind: image),
-        )
+        ),
       )
     }
   }
@@ -453,7 +449,7 @@
         graph-outline(
           title: LIST_OF_TABLES.at(language),
           target: figure.where(kind: table),
-        )
+        ),
       )
     }
   }
@@ -467,7 +463,7 @@
         graph-outline(
           title: CODE_SNIPPETS.at(language),
           target: figure.where(kind: raw),
-        )
+        ),
       )
     }
   }
@@ -476,7 +472,7 @@
     print-acronyms(language, acronym-spacing)
   }
 
-  if (glossary != none and glossary.len() > 0) {
+  if (show-glossary and glossary != none and glossary.len() > 0) {
     print-glossary(language, glossary-spacing)
   }
 
