@@ -92,6 +92,31 @@ You can also reference by adding `<ref>` with the desired name after figures or 
 
 For example this @table references the table on the previous page.
 
+== Mermaid
+#figure(
+  caption: [Ein einfaches Mermaid-Flussdiagramm],
+  mermaid("
+    graph TD
+      A[Start] --> B{Diagramm benötigt?}
+      B -- Ja --> C[Mermaid nutzen]
+      B -- Nein --> D[Text schreiben]
+      C --> E[Dokument kompilieren]
+      D --> E
+  ")
+)
+
+#mermaid(
+  "graph TD; A-->B;",
+  base-theme: "default",
+  theme: (
+    background: "#ff0000",
+    primary_color: "#ff0000",
+  ),
+  layout: (
+    node_spacing: 50,
+  ),
+)
+
 == Custom commands
 
 ==== TODO:
