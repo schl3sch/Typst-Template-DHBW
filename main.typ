@@ -24,7 +24,7 @@
   at-university: false, // if true the company name on the title page and the confidentiality statement are hidden
   bibliography: bibliography("bibliography.bib"),
   date: datetime.today(),
-  glossary: true, // displays the glossary terms defined in the glossary dictionary
+  show-glossary: true, // displays the glossary terms defined in the glossary dictionary
   language: "de", // en, de
   university: "Duale Hochschule Baden-Württemberg",
   university-location: "Heidenheim",
