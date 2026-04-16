@@ -36,7 +36,6 @@ Create figures or tables like this:
 === Figures
 
 #figure(caption: [Image Example #footnote[#glcite(<iso18004>)]], image(width: 4cm, "../assets/ts.svg"))
-
 === Tables
 
 #figure(
@@ -103,7 +102,9 @@ For example this @table references the table on the previous page.
       D --> E
   ",
   ),
-)
+)<ref>
+
+Referenz: @ref
 
 #mermaid(
   "graph TD; A-->B;",
