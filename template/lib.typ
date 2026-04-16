@@ -413,7 +413,10 @@
     let elems = query(figure.where(kind: image))
     let count = elems.len()
     show cite: none // Versteckt Zitate im Verzeichnis
-    show footnote: none
+    show footnote: it => {
+      counter(footnote).update(n => n - 1)
+      none
+    }
     show footnote.entry: none
     set footnote.entry(separator: none)
     if (show-list-of-figures and count > 0) {
@@ -428,7 +431,10 @@
     let elems = query(figure.where(kind: table))
     let count = elems.len()
     show cite: none
-    show footnote: none
+    show footnote: it => {
+      counter(footnote).update(n => n - 1)
+      none
+    }
     show footnote.entry: none
     set footnote.entry(separator: none)
     if (show-list-of-tables and count > 0) {
@@ -443,7 +449,10 @@
     let elems = query(figure.where(kind: raw))
     let count = elems.len()
     show cite: none
-    show footnote: none
+    show footnote: it => {
+      counter(footnote).update(n => n - 1)
+      none
+    }
     show footnote.entry: none
     set footnote.entry(separator: none)
     if (show-code-snippets and count > 0) {
