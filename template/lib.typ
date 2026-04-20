@@ -539,7 +539,7 @@
 
   let ai-usage = include "../ai-table.typ"
   if (ai-table and ai-usage != none) {
-    heading(level: 1, numbering: none, outlined: false)[#AI_USAGE.at(language)]
+    heading(level: 1, numbering: none, outlined: true)[#AI_USAGE.at(language)]
     text(ai-usage)
   }
 
