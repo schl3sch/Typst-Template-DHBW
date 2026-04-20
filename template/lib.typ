@@ -184,8 +184,8 @@
   }
 
   show heading.where(level: 1): it => {
-    pagebreak()
-    v(2em) + it + v(1em)
+    pagebreak(weak: true)
+    block(spacing: 2em) + it + v(1em)
   }
   show heading.where(level: 2): it => v(1em) + it + v(0.5em)
   show heading.where(level: 3): it => v(0.5em) + it + v(0.25em)
