@@ -185,8 +185,8 @@
   }
 
   show heading.where(level: 1): it => {
-    pagebreak()
-    v(2em) + it + v(1em)
+    pagebreak(weak: true)
+    block(spacing: 2em) + it + v(1em)
     if (reset-footnote-counter) {
       counter(footnote).update(0)
     }
