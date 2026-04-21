@@ -28,6 +28,7 @@
   date: datetime.today(),
   show-glossary: true,
   glossary: glossary, // displays the glossary terms defined in the glossary dictionary
+  reset-footnote-counter: true,
   language: "de", // en, de
   university: "Duale Hochschule Baden-Württemberg",
   university-location: "Heidenheim",
