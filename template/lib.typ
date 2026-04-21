@@ -68,6 +68,7 @@
   acronyms: none,
   glossary: none,
   show-glossary: true,
+  reset-footnote-counter: true,
   header: none,
   confidentiality-statement-content: none,
   declaration-of-authorship-content: none,
@@ -186,6 +187,9 @@
   show heading.where(level: 1): it => {
     pagebreak(weak: true)
     block(spacing: 2em) + it + v(1em)
+    if (reset-footnote-counter) {
+      counter(footnote).update(0)
+    }
   }
   show heading.where(level: 2): it => v(1em) + it + v(0.5em)
   show heading.where(level: 3): it => v(0.5em) + it + v(0.25em)
