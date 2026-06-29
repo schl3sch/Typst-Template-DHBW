@@ -34,6 +34,7 @@
   university: "Dualen Hochschule Baden-Württemberg",
   university-location: "Heidenheim",
   university-short: "DHBW",
+  weeks: 12,
   supervisor: (company: "Otto Normalverbraucher", university: "Erika Mustermann"),
   // for more options check the package documentation (https://typst.app/universe/package/supercharged-dhbw)
 )

@@ -13,6 +13,16 @@
   "en": "at the ",
 )
 
+#let TITLEPAGE_WORKPERIOD_1 = (
+  "de": "Bearbeitungszeitraum:",
+  "en": "Processing Period:",
+)
+
+#let TITLEPAGE_WORKPERIOD_2 = (
+  "de": "Wochen",
+  "en": "Weeks",
+)
+
 #let TITLEPAGE_STUDENT_ID = (
   "de": "Matrikelnummer, Kurs:",
   "en": "Student ID, Course:",
@@ -84,7 +94,7 @@
 )
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_J = (
-  "de" : "dass ich den Einsatz von KI-Werkzeugen an den entsprechenden Stellen der Arbeit vollständig und transparent kenntlich gemacht habe;",
+  "de": "dass ich den Einsatz von KI-Werkzeugen an den entsprechenden Stellen der Arbeit vollständig und transparent kenntlich gemacht habe;",
   "en": "all sections of this work generated or assisted by AI tools have been explicitly marked as such;",
 )
 

@@ -78,6 +78,7 @@
   university-location: none,
   university-short: none,
   city: none,
+  weeks: none,
   supervisor: (:),
   date: none,
   date-format: "[day].[month].[year]",
@@ -219,6 +220,7 @@
       show-confidentiality-statement,
       confidentiality-marker,
       university-short,
+      weeks,
     )
   }
 

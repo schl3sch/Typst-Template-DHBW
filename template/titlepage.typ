@@ -21,6 +21,7 @@
   show-confidentiality-statement,
   confidentiality-marker,
   university-short,
+  weeks,
 ) = {
   if (many-authors) {
     v(-1.5em)
@@ -201,6 +202,11 @@
     columns: (auto, auto),
     row-gutter: 11pt,
     column-gutter: 2.5em,
+
+    // Work Period
+    text(weight: "semibold", TITLEPAGE_WORKPERIOD_1.at(language)),
+    [#text([#weeks])
+      #text(TITLEPAGE_WORKPERIOD_2.at(language))],
 
     // students
     text(weight: "semibold", TITLEPAGE_STUDENT_ID.at(language)),
