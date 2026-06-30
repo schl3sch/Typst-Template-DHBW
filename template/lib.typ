@@ -134,6 +134,7 @@
     math-numbering,
     ignored-link-label-keys-for-highlighting,
     page-numbering,
+    weeks,
   )
 
   // set the document's basic properties

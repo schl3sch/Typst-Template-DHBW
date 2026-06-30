@@ -38,6 +38,7 @@
   math-numbering,
   ignored-link-label-keys-for-highlighting,
   page-numbering,
+  weeks,
 ) = {
   if (title == none or title == "") {
     panic("Title is missing. Specify a title in the 'title' attribute of the template.")
@@ -222,6 +223,12 @@
         panic("Author '" + author.name + "' is missing a company. Add the 'company' object to the author.")
       }
     }
+  }
+
+  if weeks == none {
+    panic("The argument 'weeks' is required. Please specify the number of weeks.")
+  } else if type(weeks) != int and type(weeks) != float {
+    panic("The argument 'weeks' must be a number (int or float), but found type: " + str(type(weeks)) + ".")
   }
 
   if (language != "en" and language != "de") {
